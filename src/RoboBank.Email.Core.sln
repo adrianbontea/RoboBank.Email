@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboBank.Email.Domain", "RoboBank.Email.Domain\RoboBank.Email.Domain.csproj", "{5E51613E-E38D-4387-BA38-E6D095139FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboBank.Email.Application", "RoboBank.Email.Application\RoboBank.Email.Application.csproj", "{BAB365B9-EFCA-49EF-BB7A-3CD09BD9A520}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E51613E-E38D-4387-BA38-E6D095139FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E51613E-E38D-4387-BA38-E6D095139FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E51613E-E38D-4387-BA38-E6D095139FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E51613E-E38D-4387-BA38-E6D095139FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB365B9-EFCA-49EF-BB7A-3CD09BD9A520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB365B9-EFCA-49EF-BB7A-3CD09BD9A520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB365B9-EFCA-49EF-BB7A-3CD09BD9A520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB365B9-EFCA-49EF-BB7A-3CD09BD9A520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
