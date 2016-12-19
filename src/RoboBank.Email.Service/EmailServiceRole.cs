@@ -7,6 +7,8 @@ using Microsoft.ServiceBus.Messaging;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.Practices.Unity;
 using RoboBank.Email.Application;
+using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights;
 
 namespace RoboBank.Email.Service
 {
@@ -14,6 +16,7 @@ namespace RoboBank.Email.Service
     {
         private QueueClient _client;
         private EmailApplicationService _emailApplicationService;
+        private TelemetryClient _telemetryClient;
         private readonly ManualResetEvent _completedEvent = new ManualResetEvent(false);
 
         public override void Run()
@@ -37,7 +40,7 @@ namespace RoboBank.Email.Service
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine($"{ex.Message} : {ex.StackTrace}");
+                        _telemetryClient.TrackException(ex);
                     }
                 });
 
@@ -53,7 +56,8 @@ namespace RoboBank.Email.Service
 
             _client = QueueClient.CreateFromConnectionString(connectionString, queueName);
             _emailApplicationService = UnityConfig.GetConfiguredContainer().Resolve<EmailApplicationService>();
-
+            TelemetryConfiguration.Active.InstrumentationKey = ConfigurationManager.AppSettings["ApplicationInsightsKey"];
+            _telemetryClient = new TelemetryClient();
             return base.OnStart();
         }
 
